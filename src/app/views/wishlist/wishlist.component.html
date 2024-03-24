@@ -1,0 +1,9 @@
+<div class="" *ngIf="objData.length>0" style="display: flex;justify-content: space-evenly;flex-wrap: wrap;">
+    <ng-container *ngFor="let art of objData">
+        <app-museum-card [objectID]="art"></app-museum-card>
+    </ng-container>
+</div>
+<div class="d-flex"style="height:90vh;justify-content:center;align-items:center" *ngIf="objData.length == 0">
+    <h1>Nothing added to wishlist!</h1>
+</div>
+

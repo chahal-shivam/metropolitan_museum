@@ -1,0 +1,11 @@
+<app-header [pageTitle]="title"></app-header>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <!-- Your sidebar content here -->
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <app-spinner></app-spinner>
+  </mat-sidenav-content>
+</mat-sidenav-container>

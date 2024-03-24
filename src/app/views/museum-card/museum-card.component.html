@@ -1,0 +1,34 @@
+
+<div class="card-container">
+    <div class="card museum-card">
+        <div class="card-image" (click)="goToDetails(cardData?.objectID)">
+            <ng-container *ngIf="cardData?.primaryImageSmall">
+                <img [src]="cardData?.primaryImageSmall" class="card-img-top" style="height: 100px;width: 100%;">
+            </ng-container>
+            <ng-container *ngIf="!cardData?.primaryImageSmall">
+                <img src="/assets/Designer.png" class="card-img-top" style="height: 100px;width: 100%;">
+            </ng-container>
+        </div>
+
+        <div class="card-body">
+            <ng-container *ngIf="cardData?.title">
+                <h3 class="" style="max-height: 3.6em; /* Approximately 3 lines */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                /* Optional: Ensure proper layout */
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3; ">{{cardData.title}}</h3>
+            </ng-container>
+            <h5 class="card-text">By- {{cardData.artistDisplayName ? cardData.artistDisplayName : "Anonymous" }}</h5>
+        </div>
+        <div class="card-footer d-flex" style="justify-content: center; align-items: center;    background: #efefef;
+        border-radius: 0px 0 10px 10px;
+        padding: 5px 0px;
+        margin-top: 0px;">
+            <button type="button" class="fav-btn" (click)="wishlist(cardData?.objectID)">
+                <img [src]="checkFav(cardData?.objectID)">
+            </button>
+        </div>
+    </div>
+</div>

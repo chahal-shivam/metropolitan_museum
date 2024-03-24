@@ -1,0 +1,27 @@
+<!-- <div class="">
+    <img *ngIf="objData.primaryImageSmall" [src]="objData.primaryImage" style="width: 200px;height: auto;">
+    <img *ngIf="!objData.primaryImageSmall" src="/assets/Designer.png" style="width: 200px;height: auto;">
+ 
+</div>
+
+<div *ngIf="objData.additionalImages.length > 1" class="" style="display: flex;justify-content: space-around;flex-wrap: nowrap;">
+    <div class="add_img_view" *ngFor="let img of  objData.additionalImages" >
+        <img [src]="img">
+    </div>
+</div> -->
+
+
+<div class="image-slider">
+    <div class="main-image">
+        <img *ngIf="objData.primaryImage" [src]="objData?.primaryImage" alt="Main Image">
+        <img *ngIf="!objData.primaryImage" src="/assets/Designer.png" alt="Main Image">
+    </div>
+    <div class="thumbnail-container">
+        <div class="thumbnails">
+            <img *ngFor="let img of objData.additionalImages" [src]="img" alt="Thumbnail Image" (click)="showImage(img)">
+        </div>
+    </div>
+</div>
+<button type="button" (click)="wishlist(objData?.objectID)">
+    <img [src]="checkFav(objData?.objectID)" style="height: 30px;width: auto;">
+</button>

@@ -1,0 +1,60 @@
+.moveFav{
+    width: 30px;
+    height: auto;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    padding: 8px;
+    margin: 8px; /* Set the width of the container */
+    max-width: 1200px; /* Set the maximum width of the container */
+    height: 250px; /* Set the fixed height of the container */
+    overflow: hidden; /* Hide any content that overflows the container */
+    perspective: 1000px;
+}
+
+.museum-card {
+    width: 100%; /* Set the width of the card to fill the container */
+    height: 100%; /* Set the height of the card to fill the container */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dee2e6; /* Add border to the card */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    transition: transform 0.3s; /* Add transition for smooth 3D effect */
+}
+
+
+.card-image {
+    flex: 1; /* Allow the image to expand to fill the available space */
+}
+
+.card-body {
+    flex: 1; /* Allow the body content to expand to fill the available space */
+    padding: 10px; /* Add padding to the card body */
+    overflow: hidden; /* Hide any content that overflows the card body */
+}
+
+.card-title,
+.card-text {
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Hide any content that overflows the container */
+    white-space: nowrap; /* Prevent text from wrapping to a new line */
+    text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
+}
+
+
+.museum-card:hover {
+    transform: translateY(-5px); /* Move the card upwards on hover for a 3D effect */
+}
+.fav-btn{
+    background: none;
+    border: none;
+    width: 100%;
+}
+.fav-btn > img{
+    height: 15px;
+    width: auto;
+}
