@@ -1,7 +1,7 @@
 
 <div class="card-container">
     <div class="card museum-card">
-        <div class="card-image" (click)="goToDetails(cardData?.objectID)">
+        <div class="card-image" style = "cursor: pointer;" (click)="goToDetails(cardData?.objectID)">
             <ng-container *ngIf="cardData?.primaryImageSmall">
                 <img [src]="cardData?.primaryImageSmall" class="card-img-top" style="height: 100px;width: 100%;">
             </ng-container>
@@ -20,13 +20,10 @@
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 3; ">{{cardData.title}}</h3>
             </ng-container>
-            <h5 class="card-text">By- {{cardData.artistDisplayName ? cardData.artistDisplayName : "Anonymous" }}</h5>
+            <h5 class="card-text">By: {{cardData?.artistDisplayName ? cardData?.artistDisplayName : "Anonymous" }}</h5>
         </div>
-        <div class="card-footer d-flex" style="justify-content: center; align-items: center;    background: #efefef;
-        border-radius: 0px 0 10px 10px;
-        padding: 5px 0px;
-        margin-top: 0px;">
-            <button type="button" class="fav-btn" (click)="wishlist(cardData?.objectID)">
+        <div class="card-footer d-flex">
+            <button type="button" class="fav-btn" (click)="wishlist(cardData?.objectID)"  style = "cursor: pointer;">
                 <img [src]="checkFav(cardData?.objectID)">
             </button>
         </div>

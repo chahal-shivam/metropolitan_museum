@@ -50,6 +50,9 @@ export class DetailsComponent implements OnInit {
       mainImage.src = imgUrl;
     }
   }
-  
 
+  ngOnDestroy() {
+    this.sink.unsubscribe();
+  }
+  
 }

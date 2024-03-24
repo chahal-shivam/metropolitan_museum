@@ -1,16 +1,3 @@
-<!-- <div class="">
-    <img *ngIf="objData.primaryImageSmall" [src]="objData.primaryImage" style="width: 200px;height: auto;">
-    <img *ngIf="!objData.primaryImageSmall" src="/assets/Designer.png" style="width: 200px;height: auto;">
- 
-</div>
-
-<div *ngIf="objData.additionalImages.length > 1" class="" style="display: flex;justify-content: space-around;flex-wrap: nowrap;">
-    <div class="add_img_view" *ngFor="let img of  objData.additionalImages" >
-        <img [src]="img">
-    </div>
-</div> -->
-
-
 <div class="image-slider">
     <div class="main-image">
         <img *ngIf="objData.primaryImage" [src]="objData?.primaryImage" alt="Main Image">
@@ -18,10 +5,37 @@
     </div>
     <div class="thumbnail-container">
         <div class="thumbnails">
-            <img *ngFor="let img of objData.additionalImages" [src]="img" alt="Thumbnail Image" (click)="showImage(img)">
+            <img *ngFor="let img of objData.additionalImages" [src]="img" alt="Thumbnail Image"
+                (click)="showImage(img)">
         </div>
     </div>
 </div>
-<button type="button" (click)="wishlist(objData?.objectID)">
-    <img [src]="checkFav(objData?.objectID)" style="height: 30px;width: auto;">
-</button>
+<div>
+    <button type="button" class="fav-btn" (click)="wishlist(objData?.objectID)">
+        <img style="cursor: pointer;" [src]="checkFav(objData?.objectID)">
+    </button>
+</div>
+
+<div class="card-body">
+    <h1 class="card-title">{{ objData.title }}</h1>
+    <div class="card-info">
+        <p class="card-text" *ngIf="objData?.artistDisplayName"><strong>Artist:</strong> {{ objData.artistDisplayName }}</p>
+        <p class="card-text" *ngIf="objData?.artistDisplayBio"><strong>Artist Bio:</strong> {{ objData.artistDisplayBio }}</p>
+        <p class="card-text" *ngIf="objData?.artistRole"><strong>Artist Role:</strong> {{ objData.artistRole }}</p>
+        <p class="card-text" *ngIf="objData?.artistNationality"><strong>Artist Nationality:</strong> {{ objData.artistNationality }}</p>
+        <p class="card-text" *ngIf="objData?.city || objData?.state || objData?.country"><strong>Art Work Created in:</strong> {{ objData.city }} {{ objData.state }} {{ objData.country }}, on date: {{ objData.objectDate }}</p>
+        <p class="card-text" *ngIf="objData?.medium"><strong>Material used in Art Work:</strong> {{ objData.medium }}</p>
+        <p class="card-text" *ngIf="objData?.dimensions"><strong>Art Dimensions:</strong> {{ objData.dimensions }}</p>
+        <p class="card-text" *ngIf="objData?.creditLine"><strong>Source & Year Art acquired by Museum:</strong> {{ objData.creditLine }}</p>
+        <p class="card-text" *ngIf="objData?.department"><strong>Department:</strong> {{ objData.department }}</p>
+        <p class="card-text" *ngIf="objData?.objectName"><strong>Physical Appearance:</strong> {{ objData.objectName }}</p>
+        <p class="card-text" *ngIf="objData?.culture"><strong>Culture:</strong> {{ objData.culture }}</p>
+        <p class="card-text" *ngIf="objData?.period"><strong>Art Period:</strong> {{ objData.period }}</p>
+        <p class="card-text" *ngIf="objData?.dynasty"><strong>Dynasty:</strong> {{ objData.dynasty }}</p>
+        <p class="card-text" *ngIf="objData?.reign"><strong>Reign of a Monarch:</strong> {{ objData.reign }}</p>
+    </div>
+    <div class="card-body card-links">
+        <a class="card-link" [href]="objData?.objectURL" target="_blank">Check Object on our website</a>
+        <a class="card-link" [href]="objData?.objectWikidata_URL" target="_blank">Check Art Wikipedia</a>
+    </div>
+</div>

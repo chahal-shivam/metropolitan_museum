@@ -37,7 +37,7 @@ import { WishlistComponent } from './views/wishlist/wishlist.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

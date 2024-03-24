@@ -40,5 +40,8 @@ export class MuseumCardComponent implements OnInit {
    return src
   }
 
+  ngOnDestroy() {
+    this.sink.unsubscribe();
+  }
 
 }

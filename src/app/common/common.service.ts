@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class CommonService {
 
   constructor() { }
+
   wishlist(objectID: number): void {
     let favsList = localStorage.getItem("favs")
     let newFav;
@@ -32,6 +33,7 @@ export class CommonService {
   }
   checkFav(objectID: number): string {
     let favsList = localStorage.getItem("favs")
+    
     if (favsList != null || favsList != undefined) {
       favsList = JSON.parse(favsList)
       if (favsList?.includes(objectID?.toString())) {

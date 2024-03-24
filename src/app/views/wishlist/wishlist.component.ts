@@ -35,4 +35,8 @@ export class WishlistComponent implements OnInit {
     }
   }
 
+  ngOnDestroy() {
+    this.sink.unsubscribe();
+  }
+
 }
