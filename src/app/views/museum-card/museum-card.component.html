@@ -12,15 +12,19 @@
 
         <div class="card-body">
             <ng-container *ngIf="cardData?.title">
-                <h3 class="" style="max-height: 3.6em; /* Approximately 3 lines */
+                <h3 class="" style="max-height: 3.6em;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                /* Optional: Ensure proper layout */
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
-                -webkit-line-clamp: 3; ">{{cardData.title}}</h3>
+                -webkit-line-clamp: 2; ">{{cardData.title}}</h3>
             </ng-container>
-            <h5 class="card-text">By: {{cardData?.artistDisplayName ? cardData?.artistDisplayName : "Anonymous" }}</h5>
+            <h5 class="card-text" style="max-height: 3.6em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; ">By: {{cardData?.artistDisplayName ? cardData?.artistDisplayName : "Anonymous" }}</h5>
         </div>
         <div class="card-footer d-flex">
             <button type="button" class="fav-btn" (click)="wishlist(cardData?.objectID)"  style = "cursor: pointer;">
